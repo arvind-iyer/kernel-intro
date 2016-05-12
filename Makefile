@@ -1,7 +1,8 @@
 obj-m += hello-1.o
+obj-m += hello-2.o
 
 all:
-	make -C /usr/src/kernels/$(shell uname -r)+debug M=$(PWD) modules 
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules 
 clean:
-	make -C /usr/src/kernels/$(shell uname -r)+debug M=$(PWD) clean
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
